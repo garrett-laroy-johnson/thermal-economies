@@ -24,18 +24,15 @@ sensor = Adafruit_AMG88xx()
 points = [(math.floor(ix / 8), (ix % 8)) for ix in range(0, 64)]
 grid_x, grid_y = np.mgrid[0:7:32j, 0:7:32j]
 
+
+
+
 time.sleep(.1)
 
-mode = 1	
-
 while(1):
-	
-	if mode = 0
+
+
 	#read the pixels
 	oscmsg = OSC.OSCMessage()
 	oscmsg.setAddress("/thermal_zero")
 	oscmsg.append(sensor.readPixels())
-	
-	
-	else 
-		
