@@ -38,16 +38,16 @@ with open(filename, "a") as f_output:
 	csv_output = csv.writer(f_output)
 
 	if write_header:
-		csv_output.writerow(["hour","second","minute","sensor_data"])
+		csv_output.writerow(["hour","minute","second","sensor_data"])
 	
 	
 	while(1):
 
-
-		client.send( OSCMessage("/thermal_zero", sensor.readPixels()))
+		feed = sensor.readPixels()
+		client.send( OSCMessage("/thermal_zero", feed))
 		now = datetime.now()
-		row = [(now.hour), (now.minute), (now.second),(sensor.readPixels())]
+		row = [(now.hour), (now.minute), (now.second), feed]
 		csv_output.writerow(row)
-		#time.sleep(.1)
+		time.sleep(.1)
     		#f_output.flush()
 		
