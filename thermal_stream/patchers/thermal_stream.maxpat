@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 718.0, 126.0, 608.0, 899.0 ],
+		"rect" : [ 1238.0, 138.0, 608.0, 899.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,57 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-29",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "" ],
+					"patching_rect" : [ 515.0, 829.0, 63.0, 22.0 ],
+					"style" : "",
+					"text" : "jit.window"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-15",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 360.0, 49.5, 90.0, 22.0 ],
+					"style" : "",
+					"text" : "r csv_playback"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "jit.pwindow",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 300.0, 735.0, 160.0, 120.0 ],
+					"presentation_rect" : [ 45.0, 45.0, 160.0, 120.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "jit_matrix", "" ],
+					"patching_rect" : [ 300.0, 695.0, 191.0, 22.0 ],
+					"style" : "",
+					"text" : "jit.matrix interpolated 4 char 16 16"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-34",
 					"maxclass" : "newobj",
@@ -184,7 +235,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 205.0, 627.0, 80.0, 35.0 ],
+					"patching_rect" : [ 280.0, 620.5, 80.0, 35.0 ],
 					"style" : ""
 				}
 
@@ -196,9 +247,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "bang", "" ],
-					"patching_rect" : [ 39.0, 584.0, 390.0, 22.0 ],
+					"patching_rect" : [ 39.0, 585.0, 488.0, 22.0 ],
 					"style" : "",
-					"text" : "jit.world bicubic @size 16 16 @fps 10 @erase_color 0 0 0 1 @enable 1"
+					"text" : "jit.world bicubic @size 16 16 @fps 10 @erase_color 0 0 0 1 @enable 1 @output_matrix 1"
 				}
 
 			}
@@ -391,6 +442,7 @@
 					"fontsize" : 12.0,
 					"id" : "obj-38",
 					"maxclass" : "jit.fpsgui",
+					"mode" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
@@ -1379,6 +1431,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
 					"midpoints" : [ 61.5, 850.5, 48.5, 850.5 ],
 					"source" : [ "obj-17", 0 ]
@@ -1518,8 +1577,31 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"order" : 1,
+					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-29", 0 ],
+					"order" : 0,
+					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-32", 0 ],
 					"source" : [ "obj-5", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-5", 0 ]
 				}
 
 			}
@@ -1595,12 +1677,12 @@
 		"dependency_cache" : [ 			{
 				"name" : "sc.texture.bicubic.maxpat",
 				"bootpath" : "~/Documents/Max 7/Library/patchers",
-				"patcherrelativepath" : "../../../Library/patchers",
+				"patcherrelativepath" : "../../../Documents/Max 7/Library/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "jit.abs.mxo",
+				"name" : "jit.ceil.mxo",
 				"type" : "iLaX"
 			}
  ],
