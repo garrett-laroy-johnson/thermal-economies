@@ -1,9 +1,9 @@
 {
 	"name" : "thermal_stream",
 	"version" : 1,
-	"creationdate" : -685821999,
-	"modificationdate" : -685128434,
-	"viewrect" : [ 66.0, 86.0, 300.0, 500.0 ],
+	"creationdate" : -685822120,
+	"modificationdate" : 3610707464,
+	"viewrect" : [ 362.0, 133.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -20,6 +20,24 @@
 				"kind" : "patcher",
 				"local" : 1
 			}
+,
+			"thermal_sound.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+,
+			"thermal_sound_simple.maxpat" : 			{
+				"kind" : "patcher",
+				"local" : 1
+			}
+
+		}
+,
+		"code" : 		{
+
+		}
+,
+		"externals" : 		{
 
 		}
 ,
