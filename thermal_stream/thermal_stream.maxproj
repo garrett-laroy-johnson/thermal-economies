@@ -2,8 +2,8 @@
 	"name" : "thermal_stream",
 	"version" : 1,
 	"creationdate" : -685822120,
-	"modificationdate" : 3610707464,
-	"viewrect" : [ 362.0, 133.0, 300.0, 500.0 ],
+	"modificationdate" : -675456615,
+	"viewrect" : [ 28.0, 68.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
 	"showdependencies" : 1,
@@ -14,6 +14,10 @@
 				"kind" : "patcher",
 				"local" : 1,
 				"toplevel" : 1
+			}
+,
+			"te.cam.maxpat" : 			{
+				"kind" : "patcher"
 			}
 ,
 			"csv_reader.maxpat" : 			{
@@ -33,15 +37,34 @@
 
 		}
 ,
+		"media" : 		{
+			"feedback.aiff" : 			{
+				"kind" : "audiofile",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "~/Documents/SOUNDS/musicradar-heavy-metal-samples",
+					"projectrelativepath" : "../../Documents/SOUNDS/musicradar-heavy-metal-samples"
+				}
+
+			}
+,
+			"d-lo.wav" : 			{
+				"kind" : "audiofile",
+				"local" : 1,
+				"singleton" : 				{
+					"bootpath" : "~/Documents/SOUNDS/musicradar-heavy-metal-samples/Guitar B/Powerchords B",
+					"projectrelativepath" : "../../Documents/SOUNDS/musicradar-heavy-metal-samples/Guitar B/Powerchords B"
+				}
+
+			}
+
+		}
+,
 		"code" : 		{
 
 		}
 ,
 		"externals" : 		{
-
-		}
-,
-		"other" : 		{
 
 		}
 
