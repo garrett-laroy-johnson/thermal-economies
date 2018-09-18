@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 131.0, 594.0, 463.0 ],
+		"rect" : [ 411.0, 112.0, 912.0, 542.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,37 +38,65 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-8",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 0,
-					"patching_rect" : [ 21.0, 136.5, 148.0, 22.0 ],
-					"style" : "",
-					"text" : "te.gran zero cold d-lo.wav"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-6",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 21.0, 64.5, 94.0, 22.0 ],
+					"numoutlets" : 2,
+					"outlettype" : [ "float", "bang" ],
+					"patching_rect" : [ 22.0, 246.0, 192.0, 22.0 ],
 					"style" : "",
-					"text" : "te.analysis zero"
+					"text" : "buffer~ winsample1 hamming.wav"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-39",
+					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 21.0, 98.5, 172.0, 22.0 ],
+					"patching_rect" : [ 22.0, 202.0, 133.0, 22.0 ],
 					"style" : "",
-					"text" : "te.gran zero heat feedback.aiff"
+					"text" : "te.gran one cold E.wav"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"linecount" : 2,
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "jit_matrix" ],
+					"patching_rect" : [ 51.0, 81.0, 197.0, 35.0 ],
+					"style" : "",
+					"text" : "te.viz one @window 1 @hi 40 @lo 0"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 22.0, 135.0, 91.0, 22.0 ],
+					"style" : "",
+					"text" : "te.analysis one"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "jit_matrix" ],
+					"patching_rect" : [ 22.0, 44.5, 70.0, 22.0 ],
+					"style" : "",
+					"text" : "te.cam one"
 				}
 
 			}
@@ -1389,7 +1417,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1364.5, 518.0, 71.0, 22.0 ],
+					"patching_rect" : [ 1156.5, 516.0, 71.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1403,66 +1431,26 @@
 				}
 
 			}
-, 			{
-				"box" : 				{
-					"id" : "obj-13",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "jit_matrix" ],
-					"patching_rect" : [ 21.0, 24.5, 73.0, 22.0 ],
-					"style" : "",
-					"text" : "te.cam zero"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-9",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "jit_matrix" ],
-					"patching_rect" : [ 164.0, 64.5, 207.0, 22.0 ],
-					"style" : "",
-					"text" : "te.viz zero @window 1 @hi 80 @lo 0"
-				}
-
-			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
+					"destination" : [ "obj-10", 0 ],
 					"order" : 1,
-					"source" : [ "obj-13", 0 ]
+					"source" : [ "obj-7", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
+					"destination" : [ "obj-11", 0 ],
 					"order" : 0,
-					"source" : [ "obj-13", 0 ]
+					"source" : [ "obj-7", 0 ]
 				}
 
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "te.viz.maxpat",
-				"bootpath" : "~/thermal-economies/thermal_stream/patchers",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "te.cam.maxpat",
-				"bootpath" : "~/thermal-economies/thermal_stream/patchers",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "te.gran.maxpat",
 				"bootpath" : "~/thermal-economies/thermal_stream/patchers",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
@@ -1476,7 +1464,41 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "te.viz.maxpat",
+				"bootpath" : "~/thermal-economies/thermal_stream/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "te.gran.maxpat",
+				"bootpath" : "~/thermal-economies/thermal_stream/patchers",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "cm.buffercloud~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "jit.>p.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "jit.<p.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "jit.*.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "jit.absdiff.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "jit./.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -1527,8 +1549,8 @@
 , 			{
 				"name" : "basic",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -1539,7 +1561,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1549,7 +1571,6 @@
 , 			{
 				"name" : "basic-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -1561,6 +1582,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1575,7 +1597,6 @@
 , 			{
 				"name" : "basic-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -1587,6 +1608,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1601,7 +1623,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -1613,6 +1634,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1627,7 +1649,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -1639,6 +1660,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1653,7 +1675,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -1665,6 +1686,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1684,7 +1706,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -1696,6 +1717,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1725,7 +1747,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -1737,6 +1758,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1756,7 +1778,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -1768,6 +1789,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1777,7 +1799,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -1789,6 +1810,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1803,7 +1825,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -1815,6 +1836,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1844,7 +1866,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-1-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -1856,6 +1877,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1875,7 +1897,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-1-2-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -1887,6 +1908,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1896,7 +1918,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-1-2-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -1908,6 +1929,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1922,7 +1944,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -1934,6 +1955,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1953,7 +1975,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-1-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -1965,6 +1986,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -1999,7 +2021,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2011,6 +2032,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2025,7 +2047,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2037,6 +2058,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2051,7 +2073,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2063,6 +2084,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2077,7 +2099,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2089,6 +2110,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2108,7 +2130,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2120,6 +2141,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2149,7 +2171,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-1-1-1-4-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2161,6 +2182,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2180,7 +2202,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2192,6 +2213,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2206,7 +2228,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-1-1-3-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2218,6 +2239,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2227,7 +2249,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2239,6 +2260,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2248,7 +2270,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2260,6 +2281,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2274,7 +2296,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-1-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2286,6 +2307,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2295,7 +2317,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2307,6 +2328,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2326,7 +2348,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2338,6 +2359,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2362,7 +2384,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-1-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2374,6 +2395,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2393,7 +2415,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2405,6 +2426,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2424,7 +2446,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2436,6 +2457,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2450,7 +2472,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-5-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2462,6 +2483,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2471,7 +2493,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2483,6 +2504,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2492,7 +2514,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2504,6 +2525,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2518,7 +2540,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-1-8",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2530,6 +2551,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2544,7 +2566,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2556,6 +2577,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2570,7 +2592,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-2-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2582,6 +2603,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2601,7 +2623,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-2-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2613,6 +2634,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2637,7 +2659,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-2-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2649,6 +2670,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2673,7 +2695,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-2-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2685,6 +2706,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2699,7 +2721,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-2-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2711,6 +2732,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2725,7 +2747,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-2-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2737,6 +2758,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2751,7 +2773,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2763,6 +2784,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2777,7 +2799,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2789,6 +2810,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2798,7 +2820,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2810,6 +2831,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2824,7 +2846,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2836,6 +2857,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2850,7 +2872,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-6-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2862,6 +2883,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2886,7 +2908,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-2-8-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2898,6 +2919,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2917,7 +2939,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2929,6 +2950,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2943,7 +2965,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-3-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -2955,6 +2976,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -2989,7 +3011,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-3-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3001,6 +3022,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3015,7 +3037,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-3-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3027,6 +3048,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3041,7 +3063,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-3-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3053,6 +3074,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3062,7 +3084,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-3-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3074,6 +3095,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3083,7 +3105,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3095,6 +3116,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3124,7 +3146,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3136,6 +3157,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3155,7 +3177,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3167,6 +3188,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3176,7 +3198,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3188,6 +3209,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3197,7 +3219,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-8",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3209,6 +3230,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3218,7 +3240,6 @@
 , 			{
 				"name" : "basic-1-1-1-1-9",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3230,6 +3251,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3254,7 +3276,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3266,6 +3287,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3280,7 +3302,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3292,6 +3313,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3306,7 +3328,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3318,6 +3339,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3332,7 +3354,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3344,6 +3365,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3373,7 +3395,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-1-1-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3385,6 +3406,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3394,7 +3416,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3406,6 +3427,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3415,7 +3437,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3427,6 +3448,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3461,7 +3483,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-1-1-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3473,6 +3494,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3482,7 +3504,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3494,6 +3515,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3513,7 +3535,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3525,6 +3546,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3534,7 +3556,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3546,6 +3567,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3555,7 +3577,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3567,6 +3588,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3586,7 +3608,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3598,6 +3619,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3612,7 +3634,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-2-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3624,6 +3645,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3633,7 +3655,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3645,6 +3666,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3654,7 +3676,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3666,6 +3687,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3675,7 +3697,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-2-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3687,6 +3708,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3696,7 +3718,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-2-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3708,6 +3729,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3717,7 +3739,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-2-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3729,6 +3750,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3748,7 +3770,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3760,6 +3781,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3769,7 +3791,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3781,6 +3802,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3805,7 +3827,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-1-6-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3817,6 +3838,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3826,7 +3848,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3838,6 +3859,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3852,7 +3874,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3864,6 +3885,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3878,7 +3900,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-2-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3890,6 +3911,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3899,7 +3921,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-2-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3911,6 +3932,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3920,7 +3942,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3932,6 +3953,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3941,7 +3963,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-2-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3953,6 +3974,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -3987,7 +4009,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-2-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -3999,6 +4020,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4008,7 +4030,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4020,6 +4041,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4039,7 +4061,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4051,6 +4072,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4060,7 +4082,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4072,6 +4093,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4081,7 +4103,6 @@
 , 			{
 				"name" : "basic-1-1-1-3-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4093,6 +4114,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4112,7 +4134,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4124,6 +4145,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4138,7 +4160,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4150,6 +4171,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4164,7 +4186,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4176,6 +4197,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4190,7 +4212,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-1-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4202,6 +4223,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4211,7 +4233,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4223,6 +4244,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4232,7 +4254,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-1-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4244,6 +4265,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4258,7 +4280,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-1-1-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4270,6 +4291,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4299,7 +4321,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4311,6 +4332,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4325,7 +4347,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-1-1-3-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4337,6 +4358,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4346,7 +4368,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4358,6 +4379,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4367,7 +4389,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4379,6 +4400,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4388,7 +4410,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4400,6 +4421,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4414,7 +4436,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4426,6 +4447,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4440,7 +4462,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-1-4-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4452,6 +4473,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4481,7 +4503,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4493,6 +4514,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4502,7 +4524,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4514,6 +4535,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4528,7 +4550,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4540,6 +4561,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4554,7 +4576,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4566,6 +4587,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4580,7 +4602,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-5-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4592,6 +4613,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4601,7 +4623,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4613,6 +4634,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4622,7 +4644,6 @@
 , 			{
 				"name" : "basic-1-1-1-4-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4634,6 +4655,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4648,7 +4670,6 @@
 , 			{
 				"name" : "basic-1-1-1-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4660,6 +4681,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4679,7 +4701,6 @@
 , 			{
 				"name" : "basic-1-1-1-5-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4691,6 +4712,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4700,7 +4722,6 @@
 , 			{
 				"name" : "basic-1-1-1-5-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4712,6 +4733,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4721,7 +4743,6 @@
 , 			{
 				"name" : "basic-1-1-1-5-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4733,6 +4754,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4747,7 +4769,6 @@
 , 			{
 				"name" : "basic-1-1-1-6-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4759,6 +4780,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4768,7 +4790,6 @@
 , 			{
 				"name" : "basic-1-1-1-6-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4780,6 +4801,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4804,7 +4826,6 @@
 , 			{
 				"name" : "basic-1-1-10",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4816,6 +4837,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4825,7 +4847,6 @@
 , 			{
 				"name" : "basic-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4837,6 +4858,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4851,7 +4873,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4863,6 +4884,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4877,7 +4899,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4889,6 +4910,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4903,7 +4925,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4915,6 +4936,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4924,7 +4946,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4936,6 +4957,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4950,7 +4972,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4962,6 +4983,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4971,7 +4993,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -4983,6 +5004,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -4992,7 +5014,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5004,6 +5025,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5013,7 +5035,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5025,6 +5046,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5039,7 +5061,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5051,6 +5072,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5060,7 +5082,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-1-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5072,6 +5093,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5091,7 +5113,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5103,6 +5124,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5117,7 +5139,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5129,6 +5150,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5138,7 +5160,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5150,6 +5171,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5159,7 +5181,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-2-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5171,6 +5192,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5180,7 +5202,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-2-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5192,6 +5213,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5206,7 +5228,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-2-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5218,6 +5239,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5227,7 +5249,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-2-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5239,6 +5260,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5258,7 +5280,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5270,6 +5291,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5284,7 +5306,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-3-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5296,6 +5317,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5305,7 +5327,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-3-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5317,6 +5338,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5331,7 +5353,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5343,6 +5364,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5352,7 +5374,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5364,6 +5385,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5373,7 +5395,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5385,6 +5406,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5394,7 +5416,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5406,6 +5427,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5415,7 +5437,6 @@
 , 			{
 				"name" : "basic-1-1-2-1-8",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5427,6 +5448,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5441,7 +5463,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5453,6 +5474,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5467,7 +5489,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5479,6 +5500,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5493,7 +5515,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5505,6 +5526,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5519,7 +5541,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5531,6 +5552,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5540,7 +5562,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5552,6 +5573,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5566,7 +5588,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-1-1-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5578,6 +5599,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5587,7 +5609,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5599,6 +5620,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5608,7 +5630,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5620,6 +5641,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5629,7 +5651,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5641,6 +5662,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5655,7 +5677,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5667,6 +5688,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5676,7 +5698,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5688,6 +5709,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5702,7 +5724,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5714,6 +5735,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5738,7 +5760,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-1-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5750,6 +5771,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5769,7 +5791,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5781,6 +5802,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5790,7 +5812,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5802,6 +5823,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5816,7 +5838,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-3-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5828,6 +5849,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5837,7 +5859,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5849,6 +5870,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5858,7 +5880,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5870,6 +5891,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5884,7 +5906,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5896,6 +5917,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5905,7 +5927,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5917,6 +5938,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5931,7 +5953,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5943,6 +5964,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5952,7 +5974,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5964,6 +5985,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -5978,7 +6000,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -5990,6 +6011,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6014,7 +6036,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-1-7-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6026,6 +6047,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6040,7 +6062,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6052,6 +6073,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6066,7 +6088,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6078,6 +6099,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6092,7 +6114,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-2-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6104,6 +6125,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6113,7 +6135,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-2-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6125,6 +6146,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6139,7 +6161,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-2-1-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6151,6 +6172,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6160,7 +6182,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6172,6 +6193,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6181,7 +6203,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-2-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6193,6 +6214,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6207,7 +6229,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-2-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6219,6 +6240,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6228,7 +6250,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6240,6 +6261,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6249,7 +6271,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-2-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6261,6 +6282,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6275,7 +6297,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-2-4-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6287,6 +6308,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6301,7 +6323,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-2-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6313,6 +6334,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6327,7 +6349,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6339,6 +6360,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6353,7 +6375,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-3-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6365,6 +6386,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6384,7 +6406,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-4-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6396,6 +6417,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6410,7 +6432,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6422,6 +6443,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6436,7 +6458,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-6-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6448,6 +6469,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6457,7 +6479,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6469,6 +6490,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6478,7 +6500,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-8",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6490,6 +6511,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6504,7 +6526,6 @@
 , 			{
 				"name" : "basic-1-1-2-2-9",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6516,6 +6537,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6525,7 +6547,6 @@
 , 			{
 				"name" : "basic-1-1-2-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6537,6 +6558,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6551,7 +6573,6 @@
 , 			{
 				"name" : "basic-1-1-2-3-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6563,6 +6584,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6577,7 +6599,6 @@
 , 			{
 				"name" : "basic-1-1-2-3-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6589,6 +6610,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6598,7 +6620,6 @@
 , 			{
 				"name" : "basic-1-1-2-3-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6610,6 +6631,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6619,7 +6641,6 @@
 , 			{
 				"name" : "basic-1-1-2-3-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6631,6 +6652,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6640,7 +6662,6 @@
 , 			{
 				"name" : "basic-1-1-2-3-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6652,6 +6673,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6661,7 +6683,6 @@
 , 			{
 				"name" : "basic-1-1-2-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6673,6 +6694,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6687,7 +6709,6 @@
 , 			{
 				"name" : "basic-1-1-2-3-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6699,6 +6720,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6713,7 +6735,6 @@
 , 			{
 				"name" : "basic-1-1-2-3-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6725,6 +6746,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6749,7 +6771,6 @@
 , 			{
 				"name" : "basic-1-1-2-4-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6761,6 +6782,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6770,7 +6792,6 @@
 , 			{
 				"name" : "basic-1-1-2-4-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6782,6 +6803,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6791,7 +6813,6 @@
 , 			{
 				"name" : "basic-1-1-2-4-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6803,6 +6824,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6812,7 +6834,6 @@
 , 			{
 				"name" : "basic-1-1-2-4-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6824,6 +6845,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6838,7 +6860,6 @@
 , 			{
 				"name" : "basic-1-1-2-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6850,6 +6871,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6859,7 +6881,6 @@
 , 			{
 				"name" : "basic-1-1-2-5-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6871,6 +6892,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6900,7 +6922,6 @@
 , 			{
 				"name" : "basic-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6912,6 +6933,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6926,7 +6948,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6938,6 +6959,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6952,7 +6974,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6964,6 +6985,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -6978,7 +7000,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -6990,6 +7011,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7004,7 +7026,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-1-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7016,6 +7037,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7025,7 +7047,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-1-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7037,6 +7058,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7046,7 +7068,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7058,6 +7079,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7067,7 +7089,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-1-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7079,6 +7100,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7103,7 +7125,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-1-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7115,6 +7136,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7124,7 +7146,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7136,6 +7157,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7145,7 +7167,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7157,6 +7178,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7166,7 +7188,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7178,6 +7199,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7187,7 +7209,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7199,6 +7220,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7218,7 +7240,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7230,6 +7251,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7239,7 +7261,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-1-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7251,6 +7272,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7275,7 +7297,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-1-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7287,6 +7308,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7296,7 +7318,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7308,6 +7329,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7322,7 +7344,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7334,6 +7355,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7373,7 +7395,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-2-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7385,6 +7406,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7394,7 +7416,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7406,6 +7427,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7425,7 +7447,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7437,6 +7458,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7446,7 +7468,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7458,6 +7479,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7467,7 +7489,6 @@
 , 			{
 				"name" : "basic-1-1-3-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7479,6 +7500,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7498,7 +7520,6 @@
 , 			{
 				"name" : "basic-1-1-3-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7510,6 +7531,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7539,7 +7561,6 @@
 , 			{
 				"name" : "basic-1-1-3-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7551,6 +7572,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7570,7 +7592,6 @@
 , 			{
 				"name" : "basic-1-1-3-2-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7582,6 +7603,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7591,7 +7613,6 @@
 , 			{
 				"name" : "basic-1-1-3-2-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7603,6 +7624,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7617,7 +7639,6 @@
 , 			{
 				"name" : "basic-1-1-3-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7629,6 +7650,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7643,7 +7665,6 @@
 , 			{
 				"name" : "basic-1-1-3-3-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7655,6 +7676,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7684,7 +7706,6 @@
 , 			{
 				"name" : "basic-1-1-3-3-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7696,6 +7717,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7705,7 +7727,6 @@
 , 			{
 				"name" : "basic-1-1-3-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7717,6 +7738,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7726,7 +7748,6 @@
 , 			{
 				"name" : "basic-1-1-3-3-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7738,6 +7759,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7782,7 +7804,6 @@
 , 			{
 				"name" : "basic-1-1-3-9-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7794,6 +7815,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7803,7 +7825,6 @@
 , 			{
 				"name" : "basic-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7815,6 +7836,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7829,7 +7851,6 @@
 , 			{
 				"name" : "basic-1-1-4-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7841,6 +7862,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7855,7 +7877,6 @@
 , 			{
 				"name" : "basic-1-1-4-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7867,6 +7888,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7881,7 +7903,6 @@
 , 			{
 				"name" : "basic-1-1-4-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7893,6 +7914,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7917,7 +7939,6 @@
 , 			{
 				"name" : "basic-1-1-4-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7929,6 +7950,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7943,7 +7965,6 @@
 , 			{
 				"name" : "basic-1-1-4-1-1-1-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7955,6 +7976,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7964,7 +7986,6 @@
 , 			{
 				"name" : "basic-1-1-4-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7976,6 +7997,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -7985,7 +8007,6 @@
 , 			{
 				"name" : "basic-1-1-4-1-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -7997,6 +8018,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8006,7 +8028,6 @@
 , 			{
 				"name" : "basic-1-1-4-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8018,6 +8039,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8032,7 +8054,6 @@
 , 			{
 				"name" : "basic-1-1-4-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8044,6 +8065,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8073,7 +8095,6 @@
 , 			{
 				"name" : "basic-1-1-4-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8085,6 +8106,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8099,7 +8121,6 @@
 , 			{
 				"name" : "basic-1-1-4-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8111,6 +8132,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8125,7 +8147,6 @@
 , 			{
 				"name" : "basic-1-1-4-1-4-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8137,6 +8158,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8146,7 +8168,6 @@
 , 			{
 				"name" : "basic-1-1-4-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8158,6 +8179,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8167,7 +8189,6 @@
 , 			{
 				"name" : "basic-1-1-4-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8179,6 +8200,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8188,7 +8210,6 @@
 , 			{
 				"name" : "basic-1-1-4-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8200,6 +8221,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8219,7 +8241,6 @@
 , 			{
 				"name" : "basic-1-1-4-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8231,6 +8252,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8245,7 +8267,6 @@
 , 			{
 				"name" : "basic-1-1-4-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8257,6 +8278,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8271,7 +8293,6 @@
 , 			{
 				"name" : "basic-1-1-4-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8283,6 +8304,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8307,7 +8329,6 @@
 , 			{
 				"name" : "basic-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8319,6 +8340,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8333,7 +8355,6 @@
 , 			{
 				"name" : "basic-1-1-5-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8345,6 +8366,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8364,7 +8386,6 @@
 , 			{
 				"name" : "basic-1-1-5-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8376,6 +8397,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8400,7 +8422,6 @@
 , 			{
 				"name" : "basic-1-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8412,6 +8433,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8451,7 +8473,6 @@
 , 			{
 				"name" : "basic-1-1-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8463,6 +8484,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8482,7 +8504,6 @@
 , 			{
 				"name" : "basic-1-1-8",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8494,6 +8515,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8503,7 +8525,6 @@
 , 			{
 				"name" : "basic-1-1-9",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8515,6 +8536,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8524,8 +8546,8 @@
 , 			{
 				"name" : "basic-1-10",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -8536,7 +8558,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8546,8 +8568,8 @@
 , 			{
 				"name" : "basic-1-11",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -8558,7 +8580,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8568,8 +8590,8 @@
 , 			{
 				"name" : "basic-1-12",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -8580,7 +8602,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8590,8 +8612,8 @@
 , 			{
 				"name" : "basic-1-13",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -8602,7 +8624,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8622,8 +8644,8 @@
 , 			{
 				"name" : "basic-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -8634,7 +8656,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8644,7 +8666,6 @@
 , 			{
 				"name" : "basic-1-4-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8656,6 +8677,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8665,8 +8687,8 @@
 , 			{
 				"name" : "basic-1-4-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -8677,7 +8699,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8687,7 +8709,6 @@
 , 			{
 				"name" : "basic-1-4-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8699,6 +8720,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8708,8 +8730,8 @@
 , 			{
 				"name" : "basic-1-4-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -8720,7 +8742,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8730,7 +8752,6 @@
 , 			{
 				"name" : "basic-1-4-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8742,6 +8763,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8751,8 +8773,8 @@
 , 			{
 				"name" : "basic-1-4-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -8763,7 +8785,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8773,8 +8795,8 @@
 , 			{
 				"name" : "basic-1-4-1-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -8785,7 +8807,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8795,7 +8817,6 @@
 , 			{
 				"name" : "basic-1-4-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8807,6 +8828,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8816,8 +8838,8 @@
 , 			{
 				"name" : "basic-1-4-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -8828,7 +8850,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8838,8 +8860,8 @@
 , 			{
 				"name" : "basic-1-4-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -8850,7 +8872,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8860,8 +8882,8 @@
 , 			{
 				"name" : "basic-1-4-1-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -8872,7 +8894,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8882,8 +8904,8 @@
 , 			{
 				"name" : "basic-1-4-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -8894,7 +8916,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8904,7 +8926,6 @@
 , 			{
 				"name" : "basic-1-4-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8916,6 +8937,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8925,8 +8947,8 @@
 , 			{
 				"name" : "basic-1-4-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -8937,7 +8959,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8947,8 +8969,8 @@
 , 			{
 				"name" : "basic-1-4-1-1-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -8959,7 +8981,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8969,7 +8991,6 @@
 , 			{
 				"name" : "basic-1-4-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -8981,6 +9002,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -8990,7 +9012,6 @@
 , 			{
 				"name" : "basic-1-4-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9002,6 +9023,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9011,8 +9033,8 @@
 , 			{
 				"name" : "basic-1-4-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9023,7 +9045,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9033,7 +9055,6 @@
 , 			{
 				"name" : "basic-1-4-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9045,6 +9066,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9054,8 +9076,8 @@
 , 			{
 				"name" : "basic-1-4-1-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9066,7 +9088,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9076,8 +9098,8 @@
 , 			{
 				"name" : "basic-1-4-1-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9088,7 +9110,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9098,8 +9120,8 @@
 , 			{
 				"name" : "basic-1-4-1-2-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9110,7 +9132,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9120,8 +9142,8 @@
 , 			{
 				"name" : "basic-1-4-1-2-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9132,7 +9154,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9142,7 +9164,6 @@
 , 			{
 				"name" : "basic-1-4-1-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9154,6 +9175,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9163,8 +9185,8 @@
 , 			{
 				"name" : "basic-1-4-1-2-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9175,7 +9197,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9185,8 +9207,8 @@
 , 			{
 				"name" : "basic-1-4-1-2-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9197,7 +9219,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9207,7 +9229,6 @@
 , 			{
 				"name" : "basic-1-4-1-2-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9219,6 +9240,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9228,7 +9250,6 @@
 , 			{
 				"name" : "basic-1-4-1-2-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9240,6 +9261,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9249,8 +9271,8 @@
 , 			{
 				"name" : "basic-1-4-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9261,7 +9283,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9271,7 +9293,6 @@
 , 			{
 				"name" : "basic-1-4-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9283,6 +9304,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9292,8 +9314,8 @@
 , 			{
 				"name" : "basic-1-4-1-3-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9304,7 +9326,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9314,8 +9336,8 @@
 , 			{
 				"name" : "basic-1-4-1-3-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9326,7 +9348,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9336,7 +9358,6 @@
 , 			{
 				"name" : "basic-1-4-1-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9348,6 +9369,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9357,8 +9379,8 @@
 , 			{
 				"name" : "basic-1-4-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9369,7 +9391,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9379,8 +9401,8 @@
 , 			{
 				"name" : "basic-1-4-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9391,7 +9413,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9401,8 +9423,8 @@
 , 			{
 				"name" : "basic-1-4-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9413,7 +9435,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9423,8 +9445,8 @@
 , 			{
 				"name" : "basic-1-4-1-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9435,7 +9457,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9445,8 +9467,8 @@
 , 			{
 				"name" : "basic-1-4-1-8",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9457,7 +9479,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9467,7 +9489,6 @@
 , 			{
 				"name" : "basic-1-4-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9479,6 +9500,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9488,8 +9510,8 @@
 , 			{
 				"name" : "basic-1-4-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9500,7 +9522,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9510,7 +9532,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9522,6 +9543,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9531,8 +9553,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9543,7 +9565,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9553,7 +9575,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9565,6 +9586,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9574,8 +9596,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9586,7 +9608,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9596,7 +9618,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9608,6 +9629,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9617,8 +9639,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9629,7 +9651,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9639,8 +9661,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9651,7 +9673,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9661,7 +9683,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9673,6 +9694,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9682,8 +9704,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-1-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9694,7 +9716,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9704,8 +9726,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9716,7 +9738,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9726,8 +9748,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9738,7 +9760,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9748,8 +9770,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9760,7 +9782,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9770,7 +9792,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-1-4-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9782,6 +9803,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9791,8 +9813,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9803,7 +9825,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9813,8 +9835,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9825,7 +9847,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9835,7 +9857,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9847,6 +9868,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9856,8 +9878,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9868,7 +9890,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9878,7 +9900,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-3-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9890,6 +9911,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9899,7 +9921,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9911,6 +9932,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9920,7 +9942,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9932,6 +9953,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9941,8 +9963,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -9953,7 +9975,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9963,7 +9985,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9975,6 +9996,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -9984,7 +10006,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -9996,6 +10017,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10005,8 +10027,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10017,7 +10039,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10027,8 +10049,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10039,7 +10061,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10049,7 +10071,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10061,6 +10082,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10070,8 +10092,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-3-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10082,7 +10104,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10092,8 +10114,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10104,7 +10126,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10114,8 +10136,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10126,7 +10148,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10136,7 +10158,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10148,6 +10169,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10157,8 +10179,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10169,7 +10191,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10179,8 +10201,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10191,7 +10213,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10201,7 +10223,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10213,6 +10234,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10222,8 +10244,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10234,7 +10256,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10244,8 +10266,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10256,7 +10278,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10266,7 +10288,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10278,6 +10299,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10287,8 +10309,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10299,7 +10321,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10309,7 +10331,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-5-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10321,6 +10342,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10330,7 +10352,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10342,6 +10363,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10351,7 +10373,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10363,6 +10384,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10372,8 +10394,8 @@
 , 			{
 				"name" : "basic-1-4-2-1-7-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10384,7 +10406,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10394,7 +10416,6 @@
 , 			{
 				"name" : "basic-1-4-2-1-8",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10406,6 +10427,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10415,8 +10437,8 @@
 , 			{
 				"name" : "basic-1-4-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10427,7 +10449,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10437,7 +10459,6 @@
 , 			{
 				"name" : "basic-1-4-2-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10449,6 +10470,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10458,8 +10480,8 @@
 , 			{
 				"name" : "basic-1-4-2-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10470,7 +10492,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10480,7 +10502,6 @@
 , 			{
 				"name" : "basic-1-4-2-2-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10492,6 +10513,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10501,8 +10523,8 @@
 , 			{
 				"name" : "basic-1-4-2-2-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10513,7 +10535,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10523,8 +10545,8 @@
 , 			{
 				"name" : "basic-1-4-2-2-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10535,7 +10557,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10545,7 +10567,6 @@
 , 			{
 				"name" : "basic-1-4-2-2-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10557,6 +10578,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10566,8 +10588,8 @@
 , 			{
 				"name" : "basic-1-4-2-2-1-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10578,7 +10600,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10588,8 +10610,8 @@
 , 			{
 				"name" : "basic-1-4-2-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10600,7 +10622,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10610,8 +10632,8 @@
 , 			{
 				"name" : "basic-1-4-2-2-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10622,7 +10644,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10632,7 +10654,6 @@
 , 			{
 				"name" : "basic-1-4-2-2-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10644,6 +10665,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10653,8 +10675,8 @@
 , 			{
 				"name" : "basic-1-4-2-2-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10665,7 +10687,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10675,8 +10697,8 @@
 , 			{
 				"name" : "basic-1-4-2-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10687,7 +10709,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10697,8 +10719,8 @@
 , 			{
 				"name" : "basic-1-4-2-2-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10709,7 +10731,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10719,7 +10741,6 @@
 , 			{
 				"name" : "basic-1-4-2-2-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10731,6 +10752,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10740,8 +10762,8 @@
 , 			{
 				"name" : "basic-1-4-2-2-4-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10752,7 +10774,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10762,7 +10784,6 @@
 , 			{
 				"name" : "basic-1-4-2-2-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10774,6 +10795,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10783,8 +10805,8 @@
 , 			{
 				"name" : "basic-1-4-2-2-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10795,7 +10817,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10805,7 +10827,6 @@
 , 			{
 				"name" : "basic-1-4-2-2-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10817,6 +10838,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10826,8 +10848,8 @@
 , 			{
 				"name" : "basic-1-4-2-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10838,7 +10860,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10848,7 +10870,6 @@
 , 			{
 				"name" : "basic-1-4-2-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10860,6 +10881,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10869,8 +10891,8 @@
 , 			{
 				"name" : "basic-1-4-2-3-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10881,7 +10903,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10891,7 +10913,6 @@
 , 			{
 				"name" : "basic-1-4-2-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10903,6 +10924,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10912,7 +10934,6 @@
 , 			{
 				"name" : "basic-1-4-2-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10924,6 +10945,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10933,8 +10955,8 @@
 , 			{
 				"name" : "basic-1-4-2-4-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10945,7 +10967,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10955,7 +10977,6 @@
 , 			{
 				"name" : "basic-1-4-2-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -10967,6 +10988,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10976,8 +10998,8 @@
 , 			{
 				"name" : "basic-1-4-2-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -10988,7 +11010,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -10998,7 +11020,6 @@
 , 			{
 				"name" : "basic-1-4-2-6-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11010,6 +11031,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11019,8 +11041,8 @@
 , 			{
 				"name" : "basic-1-4-2-6-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11031,7 +11053,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11041,8 +11063,8 @@
 , 			{
 				"name" : "basic-1-4-2-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11053,7 +11075,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11063,8 +11085,8 @@
 , 			{
 				"name" : "basic-1-4-2-8",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11075,7 +11097,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11085,7 +11107,6 @@
 , 			{
 				"name" : "basic-1-4-2-8-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11097,6 +11118,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11106,8 +11128,8 @@
 , 			{
 				"name" : "basic-1-4-2-9",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11118,7 +11140,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11128,8 +11150,8 @@
 , 			{
 				"name" : "basic-1-4-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11140,7 +11162,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11150,7 +11172,6 @@
 , 			{
 				"name" : "basic-1-4-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11162,6 +11183,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11171,8 +11193,8 @@
 , 			{
 				"name" : "basic-1-4-3-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11183,7 +11205,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11193,7 +11215,6 @@
 , 			{
 				"name" : "basic-1-4-3-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11205,6 +11226,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11214,8 +11236,8 @@
 , 			{
 				"name" : "basic-1-4-3-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11226,7 +11248,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11236,8 +11258,8 @@
 , 			{
 				"name" : "basic-1-4-3-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11248,7 +11270,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11258,8 +11280,8 @@
 , 			{
 				"name" : "basic-1-4-3-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11270,7 +11292,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11280,8 +11302,8 @@
 , 			{
 				"name" : "basic-1-4-3-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11292,7 +11314,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11302,8 +11324,8 @@
 , 			{
 				"name" : "basic-1-4-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11314,7 +11336,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11324,7 +11346,6 @@
 , 			{
 				"name" : "basic-1-4-3-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11336,6 +11357,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11345,8 +11367,8 @@
 , 			{
 				"name" : "basic-1-4-3-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11357,7 +11379,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11367,7 +11389,6 @@
 , 			{
 				"name" : "basic-1-4-3-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11379,6 +11400,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11388,8 +11410,8 @@
 , 			{
 				"name" : "basic-1-4-3-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11400,7 +11422,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11410,7 +11432,6 @@
 , 			{
 				"name" : "basic-1-4-3-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11422,6 +11443,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11431,7 +11453,6 @@
 , 			{
 				"name" : "basic-1-4-3-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11443,6 +11464,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11452,7 +11474,6 @@
 , 			{
 				"name" : "basic-1-4-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11464,6 +11485,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11473,8 +11495,8 @@
 , 			{
 				"name" : "basic-1-4-4-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11485,7 +11507,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11495,8 +11517,8 @@
 , 			{
 				"name" : "basic-1-4-4-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11507,7 +11529,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11517,8 +11539,8 @@
 , 			{
 				"name" : "basic-1-4-4-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11529,7 +11551,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11539,8 +11561,8 @@
 , 			{
 				"name" : "basic-1-4-4-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11551,7 +11573,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11561,7 +11583,6 @@
 , 			{
 				"name" : "basic-1-4-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11573,6 +11594,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11582,8 +11604,8 @@
 , 			{
 				"name" : "basic-1-4-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11594,7 +11616,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11604,8 +11626,8 @@
 , 			{
 				"name" : "basic-1-4-5-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11616,7 +11638,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11626,7 +11648,6 @@
 , 			{
 				"name" : "basic-1-4-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11638,6 +11659,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11647,7 +11669,6 @@
 , 			{
 				"name" : "basic-1-4-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11659,6 +11680,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11668,7 +11690,6 @@
 , 			{
 				"name" : "basic-1-4-8",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11680,6 +11701,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11689,7 +11711,6 @@
 , 			{
 				"name" : "basic-1-4-9",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11701,6 +11722,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11710,8 +11732,8 @@
 , 			{
 				"name" : "basic-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11722,7 +11744,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11732,7 +11754,6 @@
 , 			{
 				"name" : "basic-1-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11744,6 +11765,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11753,8 +11775,8 @@
 , 			{
 				"name" : "basic-1-5-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11765,7 +11787,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11775,7 +11797,6 @@
 , 			{
 				"name" : "basic-1-5-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11787,6 +11808,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11796,8 +11818,8 @@
 , 			{
 				"name" : "basic-1-5-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11808,7 +11830,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11818,8 +11840,8 @@
 , 			{
 				"name" : "basic-1-5-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11830,7 +11852,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11840,8 +11862,8 @@
 , 			{
 				"name" : "basic-1-5-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11852,7 +11874,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11862,8 +11884,8 @@
 , 			{
 				"name" : "basic-1-5-1-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11874,7 +11896,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11884,7 +11906,6 @@
 , 			{
 				"name" : "basic-1-5-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11896,6 +11917,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11905,8 +11927,8 @@
 , 			{
 				"name" : "basic-1-5-1-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11917,7 +11939,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11927,8 +11949,8 @@
 , 			{
 				"name" : "basic-1-5-1-1-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -11939,7 +11961,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11949,7 +11971,6 @@
 , 			{
 				"name" : "basic-1-5-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11961,6 +11982,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11970,7 +11992,6 @@
 , 			{
 				"name" : "basic-1-5-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -11982,6 +12003,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -11991,8 +12013,8 @@
 , 			{
 				"name" : "basic-1-5-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12003,7 +12025,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12013,7 +12035,6 @@
 , 			{
 				"name" : "basic-1-5-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -12025,6 +12046,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12034,8 +12056,8 @@
 , 			{
 				"name" : "basic-1-5-1-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12046,7 +12068,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12056,8 +12078,8 @@
 , 			{
 				"name" : "basic-1-5-1-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12068,7 +12090,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12078,7 +12100,6 @@
 , 			{
 				"name" : "basic-1-5-1-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -12090,6 +12111,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12099,8 +12121,8 @@
 , 			{
 				"name" : "basic-1-5-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12111,7 +12133,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12121,8 +12143,8 @@
 , 			{
 				"name" : "basic-1-5-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12133,7 +12155,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12143,8 +12165,8 @@
 , 			{
 				"name" : "basic-1-5-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12155,7 +12177,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12165,8 +12187,8 @@
 , 			{
 				"name" : "basic-1-5-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12177,7 +12199,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12187,8 +12209,8 @@
 , 			{
 				"name" : "basic-1-5-1-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12199,7 +12221,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12209,7 +12231,6 @@
 , 			{
 				"name" : "basic-1-5-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -12221,6 +12242,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12230,8 +12252,8 @@
 , 			{
 				"name" : "basic-1-5-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12242,7 +12264,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12252,7 +12274,6 @@
 , 			{
 				"name" : "basic-1-5-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -12264,6 +12285,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12273,8 +12295,8 @@
 , 			{
 				"name" : "basic-1-5-2-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12285,7 +12307,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12295,8 +12317,8 @@
 , 			{
 				"name" : "basic-1-5-2-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12307,7 +12329,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12317,7 +12339,6 @@
 , 			{
 				"name" : "basic-1-5-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -12329,6 +12350,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12338,8 +12360,8 @@
 , 			{
 				"name" : "basic-1-5-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12350,7 +12372,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12360,8 +12382,8 @@
 , 			{
 				"name" : "basic-1-5-2-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12372,7 +12394,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12382,8 +12404,8 @@
 , 			{
 				"name" : "basic-1-5-2-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12394,7 +12416,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12404,7 +12426,6 @@
 , 			{
 				"name" : "basic-1-5-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -12416,6 +12437,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12425,8 +12447,8 @@
 , 			{
 				"name" : "basic-1-5-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12437,7 +12459,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12447,8 +12469,8 @@
 , 			{
 				"name" : "basic-1-5-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12459,7 +12481,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12469,8 +12491,8 @@
 , 			{
 				"name" : "basic-1-5-3-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12481,7 +12503,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12491,8 +12513,8 @@
 , 			{
 				"name" : "basic-1-5-3-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12503,7 +12525,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12513,8 +12535,8 @@
 , 			{
 				"name" : "basic-1-5-3-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12525,7 +12547,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12535,8 +12557,8 @@
 , 			{
 				"name" : "basic-1-5-3-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12547,7 +12569,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12557,8 +12579,8 @@
 , 			{
 				"name" : "basic-1-5-3-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12569,7 +12591,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12579,7 +12601,6 @@
 , 			{
 				"name" : "basic-1-5-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -12591,6 +12612,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12600,8 +12622,8 @@
 , 			{
 				"name" : "basic-1-5-4-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12612,7 +12634,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12622,8 +12644,8 @@
 , 			{
 				"name" : "basic-1-5-4-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12634,7 +12656,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12644,8 +12666,8 @@
 , 			{
 				"name" : "basic-1-5-4-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12656,7 +12678,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12666,8 +12688,8 @@
 , 			{
 				"name" : "basic-1-5-4-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12678,7 +12700,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12688,8 +12710,8 @@
 , 			{
 				"name" : "basic-1-5-4-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12700,7 +12722,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12710,8 +12732,8 @@
 , 			{
 				"name" : "basic-1-5-4-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12722,7 +12744,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12732,7 +12754,6 @@
 , 			{
 				"name" : "basic-1-5-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -12744,6 +12765,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12753,8 +12775,8 @@
 , 			{
 				"name" : "basic-1-5-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12765,7 +12787,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12775,8 +12797,8 @@
 , 			{
 				"name" : "basic-1-5-5-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12787,7 +12809,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12797,7 +12819,6 @@
 , 			{
 				"name" : "basic-1-5-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -12809,6 +12830,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12818,7 +12840,6 @@
 , 			{
 				"name" : "basic-1-5-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -12830,6 +12851,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12839,8 +12861,8 @@
 , 			{
 				"name" : "basic-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12851,7 +12873,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12861,7 +12883,6 @@
 , 			{
 				"name" : "basic-1-6-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -12873,6 +12894,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12882,8 +12904,8 @@
 , 			{
 				"name" : "basic-1-6-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12894,7 +12916,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12904,7 +12926,6 @@
 , 			{
 				"name" : "basic-1-6-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -12916,6 +12937,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12925,8 +12947,8 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12937,7 +12959,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12947,7 +12969,6 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -12959,6 +12980,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12968,8 +12990,8 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -12980,7 +13002,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -12990,7 +13012,6 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13002,6 +13023,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13011,8 +13033,8 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13023,7 +13045,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13033,8 +13055,8 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13045,7 +13067,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13055,8 +13077,8 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13067,7 +13089,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13077,8 +13099,8 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13089,7 +13111,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13099,7 +13121,6 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13111,6 +13132,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13120,7 +13142,6 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13132,6 +13153,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13141,7 +13163,6 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13153,6 +13174,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13162,8 +13184,8 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13174,7 +13196,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13184,8 +13206,8 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13196,7 +13218,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13206,8 +13228,8 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13218,7 +13240,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13228,8 +13250,8 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13240,7 +13262,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13250,8 +13272,8 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13262,7 +13284,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13272,7 +13294,6 @@
 , 			{
 				"name" : "basic-1-6-1-1-1-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13284,6 +13305,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13293,7 +13315,6 @@
 , 			{
 				"name" : "basic-1-6-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13305,6 +13326,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13314,8 +13336,8 @@
 , 			{
 				"name" : "basic-1-6-1-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13326,7 +13348,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13336,8 +13358,8 @@
 , 			{
 				"name" : "basic-1-6-1-1-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13348,7 +13370,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13358,7 +13380,6 @@
 , 			{
 				"name" : "basic-1-6-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13370,6 +13391,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13379,7 +13401,6 @@
 , 			{
 				"name" : "basic-1-6-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13391,6 +13412,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13400,7 +13422,6 @@
 , 			{
 				"name" : "basic-1-6-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13412,6 +13433,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13421,8 +13443,8 @@
 , 			{
 				"name" : "basic-1-6-1-1-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13433,7 +13455,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13443,8 +13465,8 @@
 , 			{
 				"name" : "basic-1-6-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13455,7 +13477,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13465,7 +13487,6 @@
 , 			{
 				"name" : "basic-1-6-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13477,6 +13498,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13486,8 +13508,8 @@
 , 			{
 				"name" : "basic-1-6-1-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13498,7 +13520,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13508,7 +13530,6 @@
 , 			{
 				"name" : "basic-1-6-1-2-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13520,6 +13541,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13529,7 +13551,6 @@
 , 			{
 				"name" : "basic-1-6-1-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13541,6 +13562,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13550,7 +13572,6 @@
 , 			{
 				"name" : "basic-1-6-1-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13562,6 +13583,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13571,7 +13593,6 @@
 , 			{
 				"name" : "basic-1-6-1-2-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13583,6 +13604,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13592,7 +13614,6 @@
 , 			{
 				"name" : "basic-1-6-1-2-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13604,6 +13625,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13613,7 +13635,6 @@
 , 			{
 				"name" : "basic-1-6-1-2-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13625,6 +13646,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13634,8 +13656,8 @@
 , 			{
 				"name" : "basic-1-6-1-2-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13646,7 +13668,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13656,8 +13678,8 @@
 , 			{
 				"name" : "basic-1-6-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13668,7 +13690,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13678,7 +13700,6 @@
 , 			{
 				"name" : "basic-1-6-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13690,6 +13711,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13699,7 +13721,6 @@
 , 			{
 				"name" : "basic-1-6-1-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13711,6 +13732,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13720,8 +13742,8 @@
 , 			{
 				"name" : "basic-1-6-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13732,7 +13754,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13742,8 +13764,8 @@
 , 			{
 				"name" : "basic-1-6-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13754,7 +13776,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13764,8 +13786,8 @@
 , 			{
 				"name" : "basic-1-6-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13776,7 +13798,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13786,7 +13808,6 @@
 , 			{
 				"name" : "basic-1-6-1-6-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13798,6 +13819,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13807,7 +13829,6 @@
 , 			{
 				"name" : "basic-1-6-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13819,6 +13840,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13828,8 +13850,8 @@
 , 			{
 				"name" : "basic-1-6-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13840,7 +13862,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13850,7 +13872,6 @@
 , 			{
 				"name" : "basic-1-6-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13862,6 +13883,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13871,8 +13893,8 @@
 , 			{
 				"name" : "basic-1-6-2-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13883,7 +13905,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13893,7 +13915,6 @@
 , 			{
 				"name" : "basic-1-6-2-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13905,6 +13926,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13914,7 +13936,6 @@
 , 			{
 				"name" : "basic-1-6-2-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13926,6 +13947,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13935,7 +13957,6 @@
 , 			{
 				"name" : "basic-1-6-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13947,6 +13968,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13956,7 +13978,6 @@
 , 			{
 				"name" : "basic-1-6-2-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -13968,6 +13989,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13977,8 +13999,8 @@
 , 			{
 				"name" : "basic-1-6-2-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -13989,7 +14011,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -13999,8 +14021,8 @@
 , 			{
 				"name" : "basic-1-6-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14011,7 +14033,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14021,8 +14043,8 @@
 , 			{
 				"name" : "basic-1-6-2-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14033,7 +14055,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14043,8 +14065,8 @@
 , 			{
 				"name" : "basic-1-6-2-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14055,7 +14077,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14065,8 +14087,8 @@
 , 			{
 				"name" : "basic-1-6-2-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14077,7 +14099,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14087,7 +14109,6 @@
 , 			{
 				"name" : "basic-1-6-2-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14099,6 +14120,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14108,7 +14130,6 @@
 , 			{
 				"name" : "basic-1-6-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14120,6 +14141,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14129,8 +14151,8 @@
 , 			{
 				"name" : "basic-1-6-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14141,7 +14163,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14151,8 +14173,8 @@
 , 			{
 				"name" : "basic-1-6-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14163,7 +14185,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14173,7 +14195,6 @@
 , 			{
 				"name" : "basic-1-6-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14185,6 +14206,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14194,7 +14216,6 @@
 , 			{
 				"name" : "basic-1-6-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14206,6 +14227,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14215,7 +14237,6 @@
 , 			{
 				"name" : "basic-1-6-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14227,6 +14248,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14236,8 +14258,8 @@
 , 			{
 				"name" : "basic-1-6-6-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14248,7 +14270,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14258,8 +14280,8 @@
 , 			{
 				"name" : "basic-1-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14270,7 +14292,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14280,7 +14302,6 @@
 , 			{
 				"name" : "basic-1-7-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14292,6 +14313,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14301,8 +14323,8 @@
 , 			{
 				"name" : "basic-1-7-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14313,7 +14335,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14323,7 +14345,6 @@
 , 			{
 				"name" : "basic-1-7-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14335,6 +14356,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14344,8 +14366,8 @@
 , 			{
 				"name" : "basic-1-7-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14356,7 +14378,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14366,7 +14388,6 @@
 , 			{
 				"name" : "basic-1-7-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14378,6 +14399,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14387,8 +14409,8 @@
 , 			{
 				"name" : "basic-1-7-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14399,7 +14421,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14409,7 +14431,6 @@
 , 			{
 				"name" : "basic-1-7-1-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14421,6 +14442,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14430,7 +14452,6 @@
 , 			{
 				"name" : "basic-1-7-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14442,6 +14463,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14451,7 +14473,6 @@
 , 			{
 				"name" : "basic-1-7-1-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14463,6 +14484,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14472,8 +14494,8 @@
 , 			{
 				"name" : "basic-1-7-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14484,7 +14506,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14494,7 +14516,6 @@
 , 			{
 				"name" : "basic-1-7-1-1-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14506,6 +14527,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14515,8 +14537,8 @@
 , 			{
 				"name" : "basic-1-7-1-1-1-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14527,7 +14549,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14537,8 +14559,8 @@
 , 			{
 				"name" : "basic-1-7-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14549,7 +14571,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14559,8 +14581,8 @@
 , 			{
 				"name" : "basic-1-7-1-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14571,7 +14593,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14581,8 +14603,8 @@
 , 			{
 				"name" : "basic-1-7-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14593,7 +14615,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14603,7 +14625,6 @@
 , 			{
 				"name" : "basic-1-7-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14615,6 +14636,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14624,8 +14646,8 @@
 , 			{
 				"name" : "basic-1-7-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14636,7 +14658,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14646,7 +14668,6 @@
 , 			{
 				"name" : "basic-1-7-1-1-3-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14658,6 +14679,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14667,7 +14689,6 @@
 , 			{
 				"name" : "basic-1-7-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14679,6 +14700,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14688,7 +14710,6 @@
 , 			{
 				"name" : "basic-1-7-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14700,6 +14721,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14709,7 +14731,6 @@
 , 			{
 				"name" : "basic-1-7-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14721,6 +14742,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14730,8 +14752,8 @@
 , 			{
 				"name" : "basic-1-7-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14742,7 +14764,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14752,7 +14774,6 @@
 , 			{
 				"name" : "basic-1-7-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14764,6 +14785,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14773,8 +14795,8 @@
 , 			{
 				"name" : "basic-1-7-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14785,7 +14807,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14795,7 +14817,6 @@
 , 			{
 				"name" : "basic-1-7-1-4-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14807,6 +14828,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14816,8 +14838,8 @@
 , 			{
 				"name" : "basic-1-7-1-4-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14828,7 +14850,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14838,8 +14860,8 @@
 , 			{
 				"name" : "basic-1-7-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14850,7 +14872,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14860,8 +14882,8 @@
 , 			{
 				"name" : "basic-1-7-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14872,7 +14894,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14882,8 +14904,8 @@
 , 			{
 				"name" : "basic-1-7-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14894,7 +14916,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14904,7 +14926,6 @@
 , 			{
 				"name" : "basic-1-7-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14916,6 +14937,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14925,7 +14947,6 @@
 , 			{
 				"name" : "basic-1-7-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14937,6 +14958,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14946,8 +14968,8 @@
 , 			{
 				"name" : "basic-1-7-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -14958,7 +14980,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14968,7 +14990,6 @@
 , 			{
 				"name" : "basic-1-7-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -14980,6 +15001,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -14989,8 +15011,8 @@
 , 			{
 				"name" : "basic-1-7-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -15001,7 +15023,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15011,7 +15033,6 @@
 , 			{
 				"name" : "basic-1-7-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15023,6 +15044,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15032,8 +15054,8 @@
 , 			{
 				"name" : "basic-1-7-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -15044,7 +15066,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15054,7 +15076,6 @@
 , 			{
 				"name" : "basic-1-7-5-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15066,6 +15087,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15075,7 +15097,6 @@
 , 			{
 				"name" : "basic-1-7-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15087,6 +15108,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15096,7 +15118,6 @@
 , 			{
 				"name" : "basic-1-7-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15108,6 +15129,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15117,8 +15139,8 @@
 , 			{
 				"name" : "basic-1-8",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -15129,7 +15151,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15139,7 +15161,6 @@
 , 			{
 				"name" : "basic-1-8-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15151,6 +15172,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15160,8 +15182,8 @@
 , 			{
 				"name" : "basic-1-8-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -15172,7 +15194,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15182,8 +15204,8 @@
 , 			{
 				"name" : "basic-1-8-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -15194,7 +15216,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15204,7 +15226,6 @@
 , 			{
 				"name" : "basic-1-8-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15216,6 +15237,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15225,7 +15247,6 @@
 , 			{
 				"name" : "basic-1-8-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15237,6 +15258,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15246,7 +15268,6 @@
 , 			{
 				"name" : "basic-1-8-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15258,6 +15279,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15267,8 +15289,8 @@
 , 			{
 				"name" : "basic-1-9",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -15279,7 +15301,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15289,7 +15311,6 @@
 , 			{
 				"name" : "basic-1-9-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15301,6 +15322,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15310,7 +15332,6 @@
 , 			{
 				"name" : "basic-1-9-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15322,6 +15343,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15331,8 +15353,8 @@
 , 			{
 				"name" : "basic-10",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15342,8 +15364,6 @@
 , 			{
 				"name" : "basic-11",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15355,7 +15375,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15364,8 +15386,8 @@
 , 			{
 				"name" : "basic-11-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15375,8 +15397,6 @@
 , 			{
 				"name" : "basic-11-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15388,7 +15408,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15397,8 +15419,8 @@
 , 			{
 				"name" : "basic-11-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15408,8 +15430,8 @@
 , 			{
 				"name" : "basic-11-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15419,8 +15441,8 @@
 , 			{
 				"name" : "basic-11-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15430,8 +15452,8 @@
 , 			{
 				"name" : "basic-11-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15441,8 +15463,6 @@
 , 			{
 				"name" : "basic-12",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15454,7 +15474,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15463,8 +15485,6 @@
 , 			{
 				"name" : "basic-13",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15476,7 +15496,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15485,8 +15507,6 @@
 , 			{
 				"name" : "basic-14",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15498,7 +15518,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15507,8 +15529,6 @@
 , 			{
 				"name" : "basic-15",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15520,7 +15540,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15529,8 +15551,6 @@
 , 			{
 				"name" : "basic-16",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15542,7 +15562,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15551,8 +15573,6 @@
 , 			{
 				"name" : "basic-17",
 				"default" : 				{
-					"color" : [ 0.92549, 0.364706, 0.341176, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15564,7 +15584,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.0 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.0 ],
+					"color" : [ 0.92549, 0.364706, 0.341176, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15573,8 +15595,6 @@
 , 			{
 				"name" : "basic-18",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15586,7 +15606,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15595,8 +15617,6 @@
 , 			{
 				"name" : "basic-19",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15608,7 +15628,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15617,8 +15639,8 @@
 , 			{
 				"name" : "basic-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15628,8 +15650,6 @@
 , 			{
 				"name" : "basic-20",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15641,7 +15661,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15650,8 +15672,6 @@
 , 			{
 				"name" : "basic-21",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15663,7 +15683,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15672,8 +15694,6 @@
 , 			{
 				"name" : "basic-22",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15685,7 +15705,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15694,8 +15716,6 @@
 , 			{
 				"name" : "basic-23",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15707,7 +15727,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15716,8 +15738,8 @@
 , 			{
 				"name" : "basic-23-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -15728,7 +15750,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15738,8 +15760,6 @@
 , 			{
 				"name" : "basic-23-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15751,7 +15771,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15760,8 +15782,8 @@
 , 			{
 				"name" : "basic-23-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -15772,7 +15794,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15782,8 +15804,6 @@
 , 			{
 				"name" : "basic-23-1-1-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15795,7 +15815,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15804,8 +15826,8 @@
 , 			{
 				"name" : "basic-23-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -15816,7 +15838,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15826,8 +15848,6 @@
 , 			{
 				"name" : "basic-23-1-1-1-1-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15839,7 +15859,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15848,8 +15870,6 @@
 , 			{
 				"name" : "basic-23-1-1-1-1-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15861,7 +15881,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15870,8 +15892,8 @@
 , 			{
 				"name" : "basic-23-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -15882,7 +15904,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -15892,8 +15914,6 @@
 , 			{
 				"name" : "basic-23-1-1-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15905,7 +15925,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15914,8 +15936,6 @@
 , 			{
 				"name" : "basic-23-1-1-1-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15927,7 +15947,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15936,8 +15958,6 @@
 , 			{
 				"name" : "basic-23-1-1-1-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15949,7 +15969,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15958,8 +15980,6 @@
 , 			{
 				"name" : "basic-23-1-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -15971,7 +15991,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -15980,8 +16002,8 @@
 , 			{
 				"name" : "basic-23-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -15992,7 +16014,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16002,8 +16024,6 @@
 , 			{
 				"name" : "basic-23-1-1-3-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16015,7 +16035,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16024,8 +16046,6 @@
 , 			{
 				"name" : "basic-23-1-1-3-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16037,7 +16057,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16046,8 +16068,8 @@
 , 			{
 				"name" : "basic-23-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16058,7 +16080,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16068,8 +16090,8 @@
 , 			{
 				"name" : "basic-23-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16080,7 +16102,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16090,8 +16112,6 @@
 , 			{
 				"name" : "basic-23-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16103,7 +16123,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16112,8 +16134,8 @@
 , 			{
 				"name" : "basic-23-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16124,7 +16146,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16134,8 +16156,6 @@
 , 			{
 				"name" : "basic-23-1-2-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16147,7 +16167,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16156,8 +16178,6 @@
 , 			{
 				"name" : "basic-23-1-2-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16169,7 +16189,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16178,8 +16200,6 @@
 , 			{
 				"name" : "basic-23-1-2-1-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16191,7 +16211,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16200,8 +16222,6 @@
 , 			{
 				"name" : "basic-23-1-2-1-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16213,7 +16233,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16222,8 +16244,8 @@
 , 			{
 				"name" : "basic-23-1-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16234,7 +16256,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16244,8 +16266,6 @@
 , 			{
 				"name" : "basic-23-1-2-2-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16257,7 +16277,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16266,8 +16288,6 @@
 , 			{
 				"name" : "basic-23-1-2-2-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16279,7 +16299,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16288,8 +16310,8 @@
 , 			{
 				"name" : "basic-23-1-2-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16300,7 +16322,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16310,8 +16332,8 @@
 , 			{
 				"name" : "basic-23-1-2-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16322,7 +16344,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16332,8 +16354,6 @@
 , 			{
 				"name" : "basic-23-1-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16345,7 +16365,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16354,8 +16376,8 @@
 , 			{
 				"name" : "basic-23-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16366,7 +16388,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16376,8 +16398,6 @@
 , 			{
 				"name" : "basic-23-1-3-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16389,7 +16409,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16398,8 +16420,6 @@
 , 			{
 				"name" : "basic-23-1-3-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16411,7 +16431,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16420,8 +16442,8 @@
 , 			{
 				"name" : "basic-23-1-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16432,7 +16454,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16442,8 +16464,6 @@
 , 			{
 				"name" : "basic-23-1-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16455,7 +16475,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16464,8 +16486,6 @@
 , 			{
 				"name" : "basic-23-1-5",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16477,7 +16497,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16486,8 +16508,6 @@
 , 			{
 				"name" : "basic-23-1-6",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16499,7 +16519,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16508,8 +16530,6 @@
 , 			{
 				"name" : "basic-23-1-7",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16521,7 +16541,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16530,8 +16552,6 @@
 , 			{
 				"name" : "basic-23-1-8",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16543,7 +16563,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16552,8 +16574,8 @@
 , 			{
 				"name" : "basic-23-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16564,7 +16586,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16574,8 +16596,6 @@
 , 			{
 				"name" : "basic-23-2-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16587,7 +16607,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16596,8 +16618,8 @@
 , 			{
 				"name" : "basic-23-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16608,7 +16630,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16618,8 +16640,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16631,7 +16651,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16640,8 +16662,8 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16652,7 +16674,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16662,8 +16684,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16675,7 +16695,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16684,8 +16706,8 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16696,7 +16718,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16706,8 +16728,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-1-1-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16719,7 +16739,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16728,8 +16750,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-1-1-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16741,7 +16761,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16750,8 +16772,8 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16762,7 +16784,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16772,8 +16794,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-1-1-2-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16785,7 +16805,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16794,8 +16816,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16807,7 +16827,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16816,8 +16838,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-1-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16829,7 +16849,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16838,8 +16860,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-1-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16851,7 +16871,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16860,8 +16882,8 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-1-4-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16872,7 +16894,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16882,8 +16904,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-1-5",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16895,7 +16915,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16904,8 +16926,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16917,7 +16937,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16926,8 +16948,8 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16938,7 +16960,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16948,8 +16970,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-3-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -16961,7 +16981,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -16970,8 +16992,8 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-3-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -16982,7 +17004,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -16992,8 +17014,8 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17004,7 +17026,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17014,8 +17036,8 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17026,7 +17048,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17036,8 +17058,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-5-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17049,7 +17069,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17058,8 +17080,8 @@
 , 			{
 				"name" : "basic-23-2-1-1-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17070,7 +17092,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17080,8 +17102,8 @@
 , 			{
 				"name" : "basic-23-2-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17092,7 +17114,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17102,8 +17124,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-2-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17115,7 +17135,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17124,8 +17146,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17137,7 +17157,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17146,8 +17168,8 @@
 , 			{
 				"name" : "basic-23-2-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17158,7 +17180,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17168,8 +17190,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-3-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17181,7 +17201,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17190,8 +17212,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17203,7 +17223,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17212,8 +17234,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-5",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17225,7 +17245,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17234,8 +17256,8 @@
 , 			{
 				"name" : "basic-23-2-1-1-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17246,7 +17268,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17256,8 +17278,6 @@
 , 			{
 				"name" : "basic-23-2-1-1-6",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17269,7 +17289,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17278,8 +17300,6 @@
 , 			{
 				"name" : "basic-23-2-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17291,7 +17311,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17300,8 +17322,8 @@
 , 			{
 				"name" : "basic-23-2-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17312,7 +17334,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17322,8 +17344,6 @@
 , 			{
 				"name" : "basic-23-2-1-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17335,7 +17355,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17344,8 +17366,6 @@
 , 			{
 				"name" : "basic-23-2-1-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17357,7 +17377,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17366,8 +17388,8 @@
 , 			{
 				"name" : "basic-23-2-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17378,7 +17400,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17388,8 +17410,6 @@
 , 			{
 				"name" : "basic-23-2-1-5-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17401,7 +17421,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17410,8 +17432,8 @@
 , 			{
 				"name" : "basic-23-2-1-5-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17422,7 +17444,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17432,8 +17454,8 @@
 , 			{
 				"name" : "basic-23-2-1-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17444,7 +17466,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17454,8 +17476,8 @@
 , 			{
 				"name" : "basic-23-2-1-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17466,7 +17488,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17476,8 +17498,6 @@
 , 			{
 				"name" : "basic-23-2-1-7-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17489,7 +17509,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17498,8 +17520,8 @@
 , 			{
 				"name" : "basic-23-2-1-8",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17510,7 +17532,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17520,8 +17542,6 @@
 , 			{
 				"name" : "basic-23-2-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17533,7 +17553,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17542,8 +17564,8 @@
 , 			{
 				"name" : "basic-23-2-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17554,7 +17576,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17564,8 +17586,6 @@
 , 			{
 				"name" : "basic-23-2-2-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17577,7 +17597,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17586,8 +17608,8 @@
 , 			{
 				"name" : "basic-23-2-2-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17598,7 +17620,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17608,8 +17630,6 @@
 , 			{
 				"name" : "basic-23-2-2-1-1-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17621,7 +17641,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17630,8 +17652,6 @@
 , 			{
 				"name" : "basic-23-2-2-1-1-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17643,7 +17663,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17652,8 +17674,8 @@
 , 			{
 				"name" : "basic-23-2-2-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17664,7 +17686,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17674,8 +17696,6 @@
 , 			{
 				"name" : "basic-23-2-2-1-1-2-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17687,7 +17707,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17696,8 +17718,6 @@
 , 			{
 				"name" : "basic-23-2-2-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17709,7 +17729,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17718,8 +17740,6 @@
 , 			{
 				"name" : "basic-23-2-2-1-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17731,7 +17751,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17740,8 +17762,8 @@
 , 			{
 				"name" : "basic-23-2-2-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17752,7 +17774,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17762,8 +17784,6 @@
 , 			{
 				"name" : "basic-23-2-2-1-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17775,7 +17795,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17784,8 +17806,6 @@
 , 			{
 				"name" : "basic-23-2-2-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17797,7 +17817,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17806,8 +17828,6 @@
 , 			{
 				"name" : "basic-23-2-2-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17819,7 +17839,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17828,8 +17850,8 @@
 , 			{
 				"name" : "basic-23-2-2-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17840,7 +17862,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17850,8 +17872,6 @@
 , 			{
 				"name" : "basic-23-2-2-4-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17863,7 +17883,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17872,8 +17894,8 @@
 , 			{
 				"name" : "basic-23-2-2-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17884,7 +17906,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17894,8 +17916,6 @@
 , 			{
 				"name" : "basic-23-2-2-5-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17907,7 +17927,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17916,8 +17938,8 @@
 , 			{
 				"name" : "basic-23-2-2-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17928,7 +17950,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17938,8 +17960,6 @@
 , 			{
 				"name" : "basic-23-2-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17951,7 +17971,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -17960,8 +17982,8 @@
 , 			{
 				"name" : "basic-23-2-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -17972,7 +17994,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -17982,8 +18004,6 @@
 , 			{
 				"name" : "basic-23-2-3-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -17995,7 +18015,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18004,8 +18026,8 @@
 , 			{
 				"name" : "basic-23-2-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18016,7 +18038,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18026,8 +18048,8 @@
 , 			{
 				"name" : "basic-23-2-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18038,7 +18060,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18048,8 +18070,6 @@
 , 			{
 				"name" : "basic-23-2-4-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18061,7 +18081,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18070,8 +18092,8 @@
 , 			{
 				"name" : "basic-23-2-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18082,7 +18104,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18092,8 +18114,6 @@
 , 			{
 				"name" : "basic-23-2-6",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18105,7 +18125,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18114,8 +18136,8 @@
 , 			{
 				"name" : "basic-23-2-6-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18126,7 +18148,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18136,8 +18158,6 @@
 , 			{
 				"name" : "basic-23-2-6-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18149,7 +18169,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18158,8 +18180,6 @@
 , 			{
 				"name" : "basic-23-2-7",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18171,7 +18191,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18180,8 +18202,6 @@
 , 			{
 				"name" : "basic-23-2-8",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18193,7 +18213,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18202,8 +18224,8 @@
 , 			{
 				"name" : "basic-23-2-8-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18214,7 +18236,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18224,8 +18246,6 @@
 , 			{
 				"name" : "basic-23-2-9",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18237,7 +18257,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18246,8 +18268,6 @@
 , 			{
 				"name" : "basic-23-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18259,7 +18279,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18268,8 +18290,8 @@
 , 			{
 				"name" : "basic-23-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18280,7 +18302,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18290,8 +18312,6 @@
 , 			{
 				"name" : "basic-23-3-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18303,7 +18323,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18312,8 +18334,8 @@
 , 			{
 				"name" : "basic-23-3-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18324,7 +18346,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18334,8 +18356,6 @@
 , 			{
 				"name" : "basic-23-3-1-1-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18347,7 +18367,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18356,8 +18378,6 @@
 , 			{
 				"name" : "basic-23-3-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18369,7 +18389,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18378,8 +18400,6 @@
 , 			{
 				"name" : "basic-23-3-1-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18391,7 +18411,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18400,8 +18422,6 @@
 , 			{
 				"name" : "basic-23-3-1-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18413,7 +18433,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18422,8 +18444,6 @@
 , 			{
 				"name" : "basic-23-3-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18435,7 +18455,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18444,8 +18466,8 @@
 , 			{
 				"name" : "basic-23-3-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18456,7 +18478,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18466,8 +18488,6 @@
 , 			{
 				"name" : "basic-23-3-2-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18479,7 +18499,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18488,8 +18510,8 @@
 , 			{
 				"name" : "basic-23-3-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18500,7 +18522,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18510,8 +18532,6 @@
 , 			{
 				"name" : "basic-23-3-3-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18523,7 +18543,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18532,8 +18554,8 @@
 , 			{
 				"name" : "basic-23-3-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18544,7 +18566,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18554,8 +18576,8 @@
 , 			{
 				"name" : "basic-23-3-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18566,7 +18588,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18576,8 +18598,8 @@
 , 			{
 				"name" : "basic-23-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18588,7 +18610,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18598,8 +18620,6 @@
 , 			{
 				"name" : "basic-23-4-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18611,7 +18631,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18620,8 +18642,6 @@
 , 			{
 				"name" : "basic-23-4-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18633,7 +18653,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18642,8 +18664,6 @@
 , 			{
 				"name" : "basic-23-4-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18655,7 +18675,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18664,8 +18686,6 @@
 , 			{
 				"name" : "basic-23-4-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18677,7 +18697,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18686,8 +18708,8 @@
 , 			{
 				"name" : "basic-23-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18698,7 +18720,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18708,8 +18730,6 @@
 , 			{
 				"name" : "basic-23-5-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18721,7 +18741,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18730,8 +18752,6 @@
 , 			{
 				"name" : "basic-23-5-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18743,7 +18763,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18752,8 +18774,8 @@
 , 			{
 				"name" : "basic-23-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18764,7 +18786,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18774,8 +18796,8 @@
 , 			{
 				"name" : "basic-23-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18786,7 +18808,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18796,8 +18818,8 @@
 , 			{
 				"name" : "basic-23-8",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18808,7 +18830,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18818,8 +18840,8 @@
 , 			{
 				"name" : "basic-23-9",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18830,7 +18852,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18840,8 +18862,6 @@
 , 			{
 				"name" : "basic-24",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18853,7 +18873,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18862,8 +18884,8 @@
 , 			{
 				"name" : "basic-24-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18874,7 +18896,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18884,8 +18906,6 @@
 , 			{
 				"name" : "basic-24-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18897,7 +18917,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18906,8 +18928,8 @@
 , 			{
 				"name" : "basic-24-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -18918,7 +18940,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -18928,8 +18950,6 @@
 , 			{
 				"name" : "basic-24-1-1-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18941,7 +18961,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18950,8 +18972,6 @@
 , 			{
 				"name" : "basic-24-1-1-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18963,7 +18983,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18972,8 +18994,6 @@
 , 			{
 				"name" : "basic-24-1-1-1-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -18985,7 +19005,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -18994,8 +19016,6 @@
 , 			{
 				"name" : "basic-24-1-1-1-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19007,7 +19027,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19016,8 +19038,8 @@
 , 			{
 				"name" : "basic-24-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -19028,7 +19050,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -19038,8 +19060,6 @@
 , 			{
 				"name" : "basic-24-1-1-2-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19051,7 +19071,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19060,8 +19082,6 @@
 , 			{
 				"name" : "basic-24-1-1-2-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19073,7 +19093,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19082,8 +19104,8 @@
 , 			{
 				"name" : "basic-24-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -19094,7 +19116,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -19104,8 +19126,8 @@
 , 			{
 				"name" : "basic-24-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -19116,7 +19138,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -19126,8 +19148,6 @@
 , 			{
 				"name" : "basic-24-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19139,7 +19159,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19148,8 +19170,8 @@
 , 			{
 				"name" : "basic-24-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -19160,7 +19182,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -19170,8 +19192,6 @@
 , 			{
 				"name" : "basic-24-1-2-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19183,7 +19203,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19192,8 +19214,6 @@
 , 			{
 				"name" : "basic-24-1-2-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19205,7 +19225,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19214,8 +19236,8 @@
 , 			{
 				"name" : "basic-24-1-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -19226,7 +19248,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -19236,8 +19258,6 @@
 , 			{
 				"name" : "basic-24-1-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19249,7 +19269,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19258,8 +19280,6 @@
 , 			{
 				"name" : "basic-24-1-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19271,7 +19291,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19280,8 +19302,6 @@
 , 			{
 				"name" : "basic-24-1-5",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19293,7 +19313,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19302,8 +19324,6 @@
 , 			{
 				"name" : "basic-24-1-6",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19315,7 +19335,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19324,8 +19346,6 @@
 , 			{
 				"name" : "basic-24-1-7",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19337,7 +19357,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19346,8 +19368,8 @@
 , 			{
 				"name" : "basic-24-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -19358,7 +19380,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -19368,8 +19390,6 @@
 , 			{
 				"name" : "basic-24-2-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19381,7 +19401,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19390,8 +19412,8 @@
 , 			{
 				"name" : "basic-24-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -19402,7 +19424,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -19412,8 +19434,6 @@
 , 			{
 				"name" : "basic-24-2-1-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19425,7 +19445,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19434,8 +19456,6 @@
 , 			{
 				"name" : "basic-24-2-1-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19447,7 +19467,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19456,8 +19478,8 @@
 , 			{
 				"name" : "basic-24-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -19468,7 +19490,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -19478,8 +19500,6 @@
 , 			{
 				"name" : "basic-24-2-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19491,7 +19511,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19500,8 +19522,6 @@
 , 			{
 				"name" : "basic-24-2-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19513,7 +19533,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19522,8 +19544,6 @@
 , 			{
 				"name" : "basic-24-2-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19535,7 +19555,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19544,8 +19566,8 @@
 , 			{
 				"name" : "basic-24-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -19556,7 +19578,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -19566,8 +19588,6 @@
 , 			{
 				"name" : "basic-24-3-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19579,7 +19599,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19588,8 +19610,6 @@
 , 			{
 				"name" : "basic-24-3-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19601,7 +19621,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19610,8 +19632,6 @@
 , 			{
 				"name" : "basic-24-3-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19623,7 +19643,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19632,8 +19654,6 @@
 , 			{
 				"name" : "basic-24-3-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19645,7 +19665,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19654,8 +19676,6 @@
 , 			{
 				"name" : "basic-24-3-5",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19667,7 +19687,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19676,8 +19698,6 @@
 , 			{
 				"name" : "basic-24-3-6",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19689,7 +19709,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19698,8 +19720,6 @@
 , 			{
 				"name" : "basic-24-3-7",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19711,7 +19731,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19720,8 +19742,8 @@
 , 			{
 				"name" : "basic-24-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -19732,7 +19754,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -19742,8 +19764,6 @@
 , 			{
 				"name" : "basic-24-4-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19755,7 +19775,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19764,8 +19786,6 @@
 , 			{
 				"name" : "basic-24-4-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19777,7 +19797,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19786,8 +19808,6 @@
 , 			{
 				"name" : "basic-24-4-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19799,7 +19819,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19808,8 +19830,6 @@
 , 			{
 				"name" : "basic-24-4-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19821,7 +19841,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19830,8 +19852,6 @@
 , 			{
 				"name" : "basic-24-4-5",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19843,7 +19863,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19852,8 +19874,6 @@
 , 			{
 				"name" : "basic-24-4-6",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19865,7 +19885,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19874,8 +19896,8 @@
 , 			{
 				"name" : "basic-24-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -19886,7 +19908,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -19896,8 +19918,6 @@
 , 			{
 				"name" : "basic-24-5-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19909,7 +19929,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19918,8 +19940,6 @@
 , 			{
 				"name" : "basic-24-5-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19931,7 +19951,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -19940,8 +19962,8 @@
 , 			{
 				"name" : "basic-24-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -19952,7 +19974,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -19962,8 +19984,8 @@
 , 			{
 				"name" : "basic-24-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -19974,7 +19996,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -19984,8 +20006,6 @@
 , 			{
 				"name" : "basic-25",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -19997,7 +20017,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20006,8 +20028,8 @@
 , 			{
 				"name" : "basic-25-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20018,7 +20040,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20028,8 +20050,6 @@
 , 			{
 				"name" : "basic-25-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20041,7 +20061,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20050,8 +20072,8 @@
 , 			{
 				"name" : "basic-25-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20062,7 +20084,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20072,8 +20094,6 @@
 , 			{
 				"name" : "basic-25-1-1-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20085,7 +20105,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20094,8 +20116,8 @@
 , 			{
 				"name" : "basic-25-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20106,7 +20128,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20116,8 +20138,6 @@
 , 			{
 				"name" : "basic-25-1-1-1-1-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20129,7 +20149,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20138,8 +20160,8 @@
 , 			{
 				"name" : "basic-25-1-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20150,7 +20172,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20160,8 +20182,6 @@
 , 			{
 				"name" : "basic-25-1-1-1-1-1-1-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20173,7 +20193,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20182,8 +20204,6 @@
 , 			{
 				"name" : "basic-25-1-1-1-1-1-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20195,7 +20215,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20204,8 +20226,6 @@
 , 			{
 				"name" : "basic-25-1-1-1-1-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20217,7 +20237,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20226,8 +20248,6 @@
 , 			{
 				"name" : "basic-25-1-1-1-1-1-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20239,7 +20259,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20248,8 +20270,8 @@
 , 			{
 				"name" : "basic-25-1-1-1-1-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20260,7 +20282,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20270,8 +20292,8 @@
 , 			{
 				"name" : "basic-25-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20282,7 +20304,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20292,8 +20314,8 @@
 , 			{
 				"name" : "basic-25-1-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20304,7 +20326,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20314,8 +20336,6 @@
 , 			{
 				"name" : "basic-25-1-1-1-1-3-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20327,7 +20347,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20336,8 +20358,6 @@
 , 			{
 				"name" : "basic-25-1-1-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20349,7 +20369,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20358,8 +20380,6 @@
 , 			{
 				"name" : "basic-25-1-1-1-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20371,7 +20391,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20380,8 +20402,6 @@
 , 			{
 				"name" : "basic-25-1-1-1-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20393,7 +20413,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20402,8 +20424,6 @@
 , 			{
 				"name" : "basic-25-1-1-1-5",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20415,7 +20435,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20424,8 +20446,8 @@
 , 			{
 				"name" : "basic-25-1-1-1-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20436,7 +20458,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20446,8 +20468,8 @@
 , 			{
 				"name" : "basic-25-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20458,7 +20480,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20468,8 +20490,6 @@
 , 			{
 				"name" : "basic-25-1-1-2-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20481,7 +20501,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20490,8 +20512,6 @@
 , 			{
 				"name" : "basic-25-1-1-2-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20503,7 +20523,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20512,8 +20534,8 @@
 , 			{
 				"name" : "basic-25-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20524,7 +20546,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20534,8 +20556,8 @@
 , 			{
 				"name" : "basic-25-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20546,7 +20568,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20556,8 +20578,8 @@
 , 			{
 				"name" : "basic-25-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20568,7 +20590,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20578,8 +20600,6 @@
 , 			{
 				"name" : "basic-25-1-1-5-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20591,7 +20611,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20600,8 +20622,6 @@
 , 			{
 				"name" : "basic-25-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20613,7 +20633,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20622,8 +20644,8 @@
 , 			{
 				"name" : "basic-25-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20634,7 +20656,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20644,8 +20666,6 @@
 , 			{
 				"name" : "basic-25-1-2-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20657,7 +20677,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20666,8 +20688,8 @@
 , 			{
 				"name" : "basic-25-1-2-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20678,7 +20700,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20688,8 +20710,8 @@
 , 			{
 				"name" : "basic-25-1-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20700,7 +20722,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20710,8 +20732,8 @@
 , 			{
 				"name" : "basic-25-1-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20722,7 +20744,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20732,8 +20754,8 @@
 , 			{
 				"name" : "basic-25-1-2-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20744,7 +20766,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20754,8 +20776,8 @@
 , 			{
 				"name" : "basic-25-1-2-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20766,7 +20788,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20776,8 +20798,8 @@
 , 			{
 				"name" : "basic-25-1-2-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20788,7 +20810,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20798,8 +20820,6 @@
 , 			{
 				"name" : "basic-25-1-2-5-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20811,7 +20831,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20820,8 +20842,6 @@
 , 			{
 				"name" : "basic-25-1-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20833,7 +20853,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20842,8 +20864,8 @@
 , 			{
 				"name" : "basic-25-1-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20854,7 +20876,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20864,8 +20886,8 @@
 , 			{
 				"name" : "basic-25-1-3-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20876,7 +20898,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20886,8 +20908,6 @@
 , 			{
 				"name" : "basic-25-1-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20899,7 +20919,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20908,8 +20930,6 @@
 , 			{
 				"name" : "basic-25-1-5",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20921,7 +20941,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20930,8 +20952,6 @@
 , 			{
 				"name" : "basic-25-1-6",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -20943,7 +20963,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -20952,8 +20974,8 @@
 , 			{
 				"name" : "basic-25-1-6-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20964,7 +20986,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20974,8 +20996,8 @@
 , 			{
 				"name" : "basic-25-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -20986,7 +21008,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -20996,8 +21018,6 @@
 , 			{
 				"name" : "basic-25-2-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21009,7 +21029,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21018,8 +21040,8 @@
 , 			{
 				"name" : "basic-25-2-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21030,7 +21052,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21040,8 +21062,6 @@
 , 			{
 				"name" : "basic-25-2-1-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21053,7 +21073,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21062,8 +21084,8 @@
 , 			{
 				"name" : "basic-25-2-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21074,7 +21096,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21084,8 +21106,8 @@
 , 			{
 				"name" : "basic-25-2-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21096,7 +21118,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21106,8 +21128,8 @@
 , 			{
 				"name" : "basic-25-2-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21118,7 +21140,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21128,8 +21150,8 @@
 , 			{
 				"name" : "basic-25-2-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21140,7 +21162,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21150,8 +21172,6 @@
 , 			{
 				"name" : "basic-25-2-1-3-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21163,7 +21183,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21172,8 +21194,6 @@
 , 			{
 				"name" : "basic-25-2-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21185,7 +21205,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21194,8 +21216,6 @@
 , 			{
 				"name" : "basic-25-2-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21207,7 +21227,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21216,8 +21238,6 @@
 , 			{
 				"name" : "basic-25-2-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21229,7 +21249,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21238,8 +21260,6 @@
 , 			{
 				"name" : "basic-25-2-5",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21251,7 +21271,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21260,8 +21282,8 @@
 , 			{
 				"name" : "basic-25-2-5-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21272,7 +21294,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21282,8 +21304,8 @@
 , 			{
 				"name" : "basic-25-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21294,7 +21316,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21304,8 +21326,6 @@
 , 			{
 				"name" : "basic-25-3-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21317,7 +21337,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21326,8 +21348,6 @@
 , 			{
 				"name" : "basic-25-3-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21339,7 +21359,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21348,8 +21370,8 @@
 , 			{
 				"name" : "basic-25-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21360,7 +21382,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21370,8 +21392,8 @@
 , 			{
 				"name" : "basic-25-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21382,7 +21404,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21392,8 +21414,8 @@
 , 			{
 				"name" : "basic-25-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21404,7 +21426,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21414,8 +21436,6 @@
 , 			{
 				"name" : "basic-25-6-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21427,7 +21447,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21436,8 +21458,6 @@
 , 			{
 				"name" : "basic-26",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21449,7 +21469,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21458,8 +21480,8 @@
 , 			{
 				"name" : "basic-26-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21470,7 +21492,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21480,8 +21502,6 @@
 , 			{
 				"name" : "basic-26-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21493,7 +21513,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21502,8 +21524,8 @@
 , 			{
 				"name" : "basic-26-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21514,7 +21536,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21524,8 +21546,6 @@
 , 			{
 				"name" : "basic-26-1-1-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21537,7 +21557,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21546,8 +21568,8 @@
 , 			{
 				"name" : "basic-26-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21558,7 +21580,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21568,8 +21590,6 @@
 , 			{
 				"name" : "basic-26-1-1-1-1-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21581,7 +21601,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21590,8 +21612,8 @@
 , 			{
 				"name" : "basic-26-1-1-1-1-1-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21602,7 +21624,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21612,8 +21634,8 @@
 , 			{
 				"name" : "basic-26-1-1-1-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21624,7 +21646,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21634,8 +21656,8 @@
 , 			{
 				"name" : "basic-26-1-1-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21646,7 +21668,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21656,8 +21678,6 @@
 , 			{
 				"name" : "basic-26-1-1-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21669,7 +21689,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21678,8 +21700,8 @@
 , 			{
 				"name" : "basic-26-1-1-1-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21690,7 +21712,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21700,8 +21722,6 @@
 , 			{
 				"name" : "basic-26-1-1-1-2-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21713,7 +21733,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21722,8 +21744,6 @@
 , 			{
 				"name" : "basic-26-1-1-1-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21735,7 +21755,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21744,8 +21766,6 @@
 , 			{
 				"name" : "basic-26-1-1-1-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21757,7 +21777,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21766,8 +21788,6 @@
 , 			{
 				"name" : "basic-26-1-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21779,7 +21799,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21788,8 +21810,8 @@
 , 			{
 				"name" : "basic-26-1-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21800,7 +21822,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21810,8 +21832,6 @@
 , 			{
 				"name" : "basic-26-1-1-3-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21823,7 +21843,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21832,8 +21854,8 @@
 , 			{
 				"name" : "basic-26-1-1-3-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21844,7 +21866,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21854,8 +21876,8 @@
 , 			{
 				"name" : "basic-26-1-1-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21866,7 +21888,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21876,8 +21898,8 @@
 , 			{
 				"name" : "basic-26-1-1-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21888,7 +21910,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21898,8 +21920,8 @@
 , 			{
 				"name" : "basic-26-1-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21910,7 +21932,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21920,8 +21942,6 @@
 , 			{
 				"name" : "basic-26-1-2-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21933,7 +21953,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21942,8 +21964,8 @@
 , 			{
 				"name" : "basic-26-1-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21954,7 +21976,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -21964,8 +21986,6 @@
 , 			{
 				"name" : "basic-26-1-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -21977,7 +21997,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -21986,8 +22008,8 @@
 , 			{
 				"name" : "basic-26-1-4-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -21998,7 +22020,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22008,8 +22030,6 @@
 , 			{
 				"name" : "basic-26-1-4-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22021,7 +22041,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22030,8 +22052,6 @@
 , 			{
 				"name" : "basic-26-1-5",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22043,7 +22063,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22052,8 +22074,6 @@
 , 			{
 				"name" : "basic-26-1-6",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22065,7 +22085,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22074,8 +22096,6 @@
 , 			{
 				"name" : "basic-26-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22087,7 +22107,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22096,8 +22118,8 @@
 , 			{
 				"name" : "basic-26-2-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -22108,7 +22130,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22118,8 +22140,8 @@
 , 			{
 				"name" : "basic-26-2-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -22130,7 +22152,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22140,8 +22162,6 @@
 , 			{
 				"name" : "basic-26-3",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22153,7 +22173,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22162,8 +22184,8 @@
 , 			{
 				"name" : "basic-26-3-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -22174,7 +22196,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22184,8 +22206,6 @@
 , 			{
 				"name" : "basic-26-4",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22197,7 +22217,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22206,8 +22228,8 @@
 , 			{
 				"name" : "basic-26-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -22218,7 +22240,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22228,8 +22250,6 @@
 , 			{
 				"name" : "basic-26-5-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22241,7 +22261,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22250,8 +22272,8 @@
 , 			{
 				"name" : "basic-26-5-1-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -22262,7 +22284,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22272,8 +22294,8 @@
 , 			{
 				"name" : "basic-26-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -22284,7 +22306,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22294,8 +22316,8 @@
 , 			{
 				"name" : "basic-26-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -22306,7 +22328,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22316,8 +22338,6 @@
 , 			{
 				"name" : "basic-27",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22329,7 +22349,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22338,8 +22360,8 @@
 , 			{
 				"name" : "basic-27-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -22350,7 +22372,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22360,8 +22382,6 @@
 , 			{
 				"name" : "basic-27-1-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22373,7 +22393,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22382,8 +22404,6 @@
 , 			{
 				"name" : "basic-27-1-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22395,7 +22415,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22404,8 +22426,8 @@
 , 			{
 				"name" : "basic-27-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -22416,7 +22438,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22426,8 +22448,8 @@
 , 			{
 				"name" : "basic-27-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -22438,7 +22460,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22448,8 +22470,8 @@
 , 			{
 				"name" : "basic-27-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -22460,7 +22482,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22470,8 +22492,6 @@
 , 			{
 				"name" : "basic-28",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22483,7 +22503,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22492,8 +22514,8 @@
 , 			{
 				"name" : "basic-28-1",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -22504,7 +22526,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22514,8 +22536,8 @@
 , 			{
 				"name" : "basic-28-2",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -22526,7 +22548,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22536,8 +22558,6 @@
 , 			{
 				"name" : "basic-29",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22549,7 +22569,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22558,8 +22580,8 @@
 , 			{
 				"name" : "basic-3",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22569,8 +22591,6 @@
 , 			{
 				"name" : "basic-30",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22582,7 +22602,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22591,8 +22613,6 @@
 , 			{
 				"name" : "basic-31",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22604,7 +22624,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22613,8 +22635,6 @@
 , 			{
 				"name" : "basic-32",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22626,7 +22646,9 @@
 						"autogradient" : 0
 					}
 ,
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22635,8 +22657,8 @@
 , 			{
 				"name" : "basic-4",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22646,8 +22668,8 @@
 , 			{
 				"name" : "basic-5",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22657,8 +22679,8 @@
 , 			{
 				"name" : "basic-6",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -22669,7 +22691,7 @@
 						"autogradient" : 0
 					}
 ,
-					"fontsize" : [ 10.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22679,7 +22701,6 @@
 , 			{
 				"name" : "basic-7",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
@@ -22691,6 +22712,7 @@
 						"autogradient" : 0
 					}
 ,
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22700,8 +22722,8 @@
 , 			{
 				"name" : "basic-8",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22711,11 +22733,11 @@
 , 			{
 				"name" : "basic-8-1",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"elementcolor" : [ 0.786675, 0.801885, 0.845022, 1.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22724,11 +22746,11 @@
 , 			{
 				"name" : "basic-8-2",
 				"default" : 				{
-					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"elementcolor" : [ 0.786675, 0.801885, 0.845022, 1.0 ],
-					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
+					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ],
+					"color" : [ 0.239216, 0.254902, 0.278431, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22737,8 +22759,8 @@
 , 			{
 				"name" : "basic-9",
 				"default" : 				{
-					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"textcolor_inverse" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
+					"accentcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"bgcolor" : [ 0.862745, 0.870588, 0.878431, 0.6 ]
 				}
 ,
@@ -22748,10 +22770,10 @@
 , 			{
 				"name" : "comment001",
 				"comment" : 				{
-					"fontname" : [ "Helvetica" ],
-					"textcolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 					"fontface" : [ 1 ],
-					"fontsize" : [ 9.0 ]
+					"fontsize" : [ 9.0 ],
+					"fontname" : [ "Helvetica" ],
+					"textcolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ]
 				}
 ,
 				"parentstyle" : "basic-17",
@@ -22788,7 +22810,6 @@
 , 			{
 				"name" : "efionfewoiew",
 				"default" : 				{
-					"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -22798,7 +22819,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"color" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
 				}
 ,
 				"parentstyle" : "basic-22",
@@ -22807,9 +22829,9 @@
 , 			{
 				"name" : "helpfile_label-1",
 				"default" : 				{
+					"fontsize" : [ 13.0 ],
 					"fontname" : [ "Arial" ],
-					"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ],
-					"fontsize" : [ 13.0 ]
+					"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22823,10 +22845,10 @@
 , 			{
 				"name" : "m4va",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"fontsize" : [ 12.0 ],
-					"bgcolor" : [ 0.788235, 0.8, 0.843137, 0.0 ]
+					"bgcolor" : [ 0.788235, 0.8, 0.843137, 0.0 ],
+					"fontname" : [ "Arial" ]
 				}
 ,
 				"parentstyle" : "",
@@ -22835,9 +22857,9 @@
 , 			{
 				"name" : "multisliderGold&Black-1",
 				"default" : 				{
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"bgcolor" : [ 0.654902, 0.572549, 0.376471, 1.0 ]
+					"bgcolor" : [ 0.654902, 0.572549, 0.376471, 1.0 ],
+					"color" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22927,8 +22949,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -22937,8 +22959,8 @@
 , 			{
 				"name" : "newobjYellow-2",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
